@@ -11,16 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 
-// Configuring the database
-var dbConfig = require('./config/database.config.js');
-var mysql = require('mysql');
-
-var connection = mysql.createConnection(dbConfig.url)
-
-
-connection.connect();
-
-
 // define a simple route
 app.get('/', function(req, res){
     res.json({"message": "Welcome"});
